@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes de Valvulopatías</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #e74c3c;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #e74c3c;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+        }
+
+        h3 {
+            color: #3498db;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+            padding: 10px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(116, 185, 255, 0.3);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #f39c12;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(243, 156, 18, 0.3);
+        }
+
+        .triada {
+            background: linear-gradient(135deg, #ff7675, #fd79a8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 118, 117, 0.4);
+        }
+
+        .sintomas {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            box-shadow: 0 5px 15px rgba(116, 185, 255, 0.4);
+        }
+
+        .signos {
+            background: linear-gradient(135deg, #55a3ff, #003d82);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 8px 0;
+            box-shadow: 0 3px 10px rgba(85, 163, 255, 0.3);
+        }
+
+        .regla-oro {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 184, 148, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .nemotecnia {
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-style: italic;
+            box-shadow: 0 5px 15px rgba(162, 155, 254, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li:before {
+            content: "●";
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .maniobra {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            box-shadow: 0 3px 10px rgba(253, 121, 168, 0.3);
+        }
+
+        .causa {
+            background: linear-gradient(135deg, #fdcb6e, #e17055);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(253, 203, 110, 0.3);
+        }
+
+        .fisiopatologia {
+            background: linear-gradient(135deg, #81ecec, #00cec9);
+            color: #2d3436;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #00b894;
+            box-shadow: 0 3px 10px rgba(129, 236, 236, 0.3);
+        }
+
+        .nav-buttons {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .nav-buttons {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🫀 APUNTES DE VALVULOPATÍAS</h1>
+
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="scrollToSection('conceptos')">CF</button>
+            <button class="nav-btn" onclick="scrollToSection('regla')">RO</button>
+            <button class="nav-btn" onclick="scrollToSection('estenosis-aortica')">EA</button>
+            <button class="nav-btn" onclick="scrollToSection('insuf-mitral')">IM</button>
+            <button class="nav-btn" onclick="scrollToSection('estenosis-mitral')">EM</button>
+            <button class="nav-btn" onclick="scrollToSection('insuf-aortica')">IA</button>
+        </div>
+
+        <section id="conceptos" class="section">
+            <h2>📚 CONCEPTOS FUNDAMENTALES</h2>
+            
+            <h3>🔊 Ruidos Cardíacos y Soplos</h3>
+            <div class="highlight">
+                <ul>
+                    <li>Los sonidos cardíacos se producen cuando las válvulas se cierran</li>
+                    <li>Cuando la válvula se abre debe estar en silencio</li>
+                    <li>Si hay sonido cuando no debería = <strong>SOPLO</strong></li>
+                </ul>
+            </div>
+            
+            <div class="nemotecnia">
+                💡 <strong>Nemotecnia clave:</strong> Si hay sonido = válvula cerrándose
+            </div>
+
+            <h3>📊 Clasificación de Soplos</h3>
+            <ul>
+                <li>Proto-sistólico</li>
+                <li>Meso-sistólico</li>
+                <li>Tele-sistólico</li>
+            </ul>
+
+            <h3>🦠 Etiología Principal</h3>
+            <div class="causa">
+                Causa más frecuente de valvulopatías: <strong>ENFERMEDAD REUMÁTICA</strong>
+            </div>
+            <ul>
+                <li>Insuficiencia mitral</li>
+                <li>Estenosis mitral</li>
+                <li>Estenosis aórtica</li>
+                <li>Insuficiencia aórtica</li>
+            </ul>
+            <div class="highlight">
+                <strong>Excepción:</strong> Estenosis aórtica en ancianos por degeneración cálcica
+            </div>
+        </section>
+
+        <section id="regla" class="section">
+            <h2>🏆 REGLA DE ORO DIAGNÓSTICA</h2>
+            
+            <div class="regla-oro">
+                <div>🔴 <strong>SOPLO SISTÓLICO → ESTENOSIS</strong></div>
+                <div style="margin: 10px 0;">Más frecuente: Estenosis Aórtica (75% de casos)</div>
+                <hr style="margin: 15px 0; border: 1px solid rgba(255,255,255,0.3);">
+                <div>🔵 <strong>SOPLO DIASTÓLICO → INSUFICIENCIA</strong></div>
+                <div style="margin-top: 10px;">Más frecuente: Insuficiencia Mitral</div>
+            </div>
+        </section>
+
+        <section id="estenosis-aortica" class="section">
+            <h2>🚪 ESTENOSIS AÓRTICA</h2>
+            
+            <h3>⚠️ Síntomas Característicos - TRÍADA CLÁSICA</h3>
+            <div class="triada">
+                <ol>
+                    <li><strong>DISNEA</strong> → por insuficiencia cardíaca (menos sangre sale por aorta)</li>
+                    <li><strong>ANGINA</strong> → menos sangre llega a coronarias</li>
+                    <li><strong>SÍNCOPE</strong> → menos sangre llega al cerebro</li>
+                </ol>
+            </div>
+
+            <h3>🎯 Características Clínicas Patognomónicas</h3>
+            <div class="sintomas">
+                <ul>
+                    <li>Soplo sistólico, especialmente <strong>TELESISTÓLICO</strong></li>
+                    <li>Irradiación <strong>AL CUELLO</strong> (palabra clave)</li>
+                    <li>Pulso <strong>PARVUS y TARDUS</strong> (exclusivo de estenosis aórtica)</li>
+                </ul>
+            </div>
+            
+            <div class="fisiopatologia">
+                <strong>Razón del pulso parvus y tardus:</strong> La sangre tarda más en salir por agujero pequeño
+            </div>
+
+            <h3>👥 Causas por Edad</h3>
+            <ul>
+                <li><strong>Pacientes jóvenes:</strong> Aorta bivalva (causa tanto estenosis como insuficiencia aórtica)</li>
+                <li><strong>Ancianos:</strong> Degeneración cálcica</li>
+            </ul>
+
+            <h3>🔪 Criterios Quirúrgicos</h3>
+            <div class="highlight">
+                <ul>
+                    <li>Fracción de eyección < 60% <strong>O</strong> síntomas presentes</li>
+                    <li>Sin síntomas + FEVI > 60% = <strong>NO requiere cirugía</strong></li>
+                    <li>Opciones: reemplazo valvular orgánico o inorgánico</li>
+                </ul>
+            </div>
+
+            <h3>📈 Derivada de Brownwell (Progresión de Síntomas)</h3>
+            <div class="sintomas">
+                <ol>
+                    <li><strong>Síncope</strong> (estadio inicial)</li>
+                    <li><strong>Disnea</strong> (estadio intermedio)</li>
+                    <li><strong>Angina</strong> (estadio avanzado - peor pronóstico)</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="insuf-mitral" class="section">
+            <h2>💨 INSUFICIENCIA MITRAL</h2>
+            
+            <h3>🫁 Síntomas Característicos</h3>
+            <div class="sintomas">
+                <ol>
+                    <li><strong>TOS + DISNEA</strong> (van de la mano)</li>
+                    <li><strong>HEMOPTISIS</strong></li>
+                </ol>
+            </div>
+
+            <div class="fisiopatologia">
+                <strong>Fisiopatología:</strong> pulmón congestivo → edema pulmonar → ruptura de vasos
+            </div>
+
+            <h3>🔍 Características Clínicas</h3>
+            <ul>
+                <li>Soplo diastólico</li>
+                <li>Irradiación <strong>A LA AXILA</strong> (palabra clave)</li>
+                <li>Múltiples soplos asociados</li>
+            </ul>
+
+            <h3>🤸 Maniobras Diagnósticas Patológicas</h3>
+            <div class="highlight">
+                <strong>REGLA IMPORTANTE:</strong> Lo contrario a lo normal = patológico
+            </div>
+
+            <div class="maniobra">
+                <strong>Respuestas Normales:</strong>
+                <ul>
+                    <li>Inspiración: ↑ sangre al corazón → ↑ ruidos</li>
+                    <li>Cuclillas: ↑ retorno venoso → ↑ ruidos</li>
+                    <li>Maniobra Valsalva: ↓ sangre al corazón → ↓ ruidos</li>
+                </ul>
+            </div>
+
+            <div class="maniobra">
+                <strong>Respuesta Patológica:</strong>
+                <ul>
+                    <li>En cuclillas: <strong>DISMINUYEN</strong> los ruidos (anormal)</li>
+                    <li>Solo ocurre en 2 enfermedades:
+                        <ol>
+                            <li>Insuficiencia mitral por prolapso</li>
+                            <li>Miocardiopatía hipertrófica</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="estenosis-mitral" class="section">
+            <h2>🔒 ESTENOSIS MITRAL</h2>
+            
+            <h3>🦠 Etiología</h3>
+            <div class="causa">
+                Principal causa: <strong>REUMÁTICA</strong><br>
+                Fiebre reumática → endocarditis reumática
+            </div>
+
+            <h3>📏 Clasificación por Severidad</h3>
+            <div class="highlight">
+                <strong>Severa:</strong> < 1 cm de diámetro del área valvular
+            </div>
+
+            <h3>⚙️ Fisiopatología</h3>
+            <div class="fisiopatologia">
+                <ul>
+                    <li>Sangre pasa lentamente de aurícula → ventrículo</li>
+                    <li>Aurícula izquierda se dilata → <strong>ARRITMIAS</strong> (característica principal)</li>
+                    <li>Ventrículo no recibe sangre → no sale sangre por aorta</li>
+                </ul>
+            </div>
+
+            <h3>⚡ Síntomas Característicos</h3>
+            <div class="sintomas">
+                <ol>
+                    <li><strong>ARRITMIAS</strong> (lo que más caracteriza)</li>
+                    <li><strong>SÍNCOPE</strong></li>
+                    <li><strong>DISNEA</strong></li>
+                    <li><strong>HIPERTENSIÓN PULMONAR</strong></li>
+                    <li><strong>DISFONÍA</strong> (Círculo de Ortner)</li>
+                </ol>
+            </div>
+
+            <div class="fisiopatologia">
+                <strong>Disfonía:</strong> Aurícula izquierda grande estimula nervio laríngeo recurrente
+            </div>
+
+            <h3>🔚 Evolución Final</h3>
+            <div class="highlight">
+                Falla ventricular → insuficiencia cardíaca global
+            </div>
+        </section>
+
+        <section id="insuf-aortica" class="section">
+            <h2>🔄 INSUFICIENCIA AÓRTICA</h2>
+            
+            <h3>⚙️ Fisiopatología</h3>
+            <div class="fisiopatologia">
+                <ul>
+                    <li>Retorno de sangre de aorta → ventrículo izquierdo en <strong>DIÁSTOLE</strong></li>
+                    <li>Ventrículo izquierdo se dilata</li>
+                </ul>
+            </div>
+
+            <h3>🎯 Característica Patognomónica</h3>
+            <div class="highlight">
+                <strong>DIFERENCIA DE PRESIÓN SISTÓLICA-DIASTÓLICA MARCADA</strong>
+                <ul>
+                    <li>Ejemplos: 160/40, 130/30 (vs normal 120/80)</li>
+                    <li>Razón: sangre regresa en diástole → presión diastólica muy baja</li>
+                </ul>
+            </div>
+
+            <h3>🔊 Soplo Especial</h3>
+            <div class="sintomas">
+                <strong>Soplo de Austin Flint:</strong>
+                <ul>
+                    <li>Sangre regresa de aorta → ventrículo</li>
+                    <li>Golpea válvula mitral</li>
+                    <li>Soplo diastólico con reforzamiento telediastólico</li>
+                </ul>
+            </div>
+
+            <h3>🔍 SIGNOS CLÍNICOS PATOGNOMÓNICOS</h3>
+            
+            <div class="signos">
+                <strong>1. Signo de Hill</strong><br>
+                Presión poplítea > presión braquial (completamente anormal)<br>
+                Normalmente: poplítea < braquial (más distal)
+            </div>
+
+            <div class="signos">
+                <strong>2. Signo de Musset</strong><br>
+                Cabeza latiendo junto con el corazón<br>
+                Movimiento de cabeza y cuello por diferencia de presiones
+            </div>
+
+            <div class="signos">
+                <strong>3. Signo de Müller</strong><br>
+                Úvula "bailando reggaetón"<br>
+                Úvula late junto con el corazón
+            </div>
+
+            <div class="signos">
+                <strong>4. Signo de Quincke</strong><br>
+                Sangre va y viene visible en las uñas<br>
+                No genera movimiento, pero se ve el flujo
+            </div>
+
+            <div class="signos">
+                <strong>5. Signo de Traube</strong><br>
+                Doble soplo en arteria femoral<br>
+                Soplo diastólico transmitido hasta vaso femoral
+            </div>
+
+            <div class="signos">
+                <strong>6. Variación Pupilar</strong><br>
+                Pupilas varían según el impulso cardíaco
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🧠 REGLAS NEMOTÉCNICAS PARA CASOS CLÍNICOS</h2>
+            
+            <h3>🔑 Palabras Clave para Diagnóstico Rápido</h3>
+            
+            <div class="nemotecnia">
+                <strong>ESTENOSIS AÓRTICA:</strong>
+                <ul>
+                    <li>"Parvus tardus"</li>
+                    <li>"Telesistólico"</li>
+                    <li>"Irradiado al cuello"</li>
+                    <li>Antecedente de faringitis (fiebre reumática)</li>
+                </ul>
+            </div>
+
+            <div class="nemotecnia">
+                <strong>INSUFICIENCIA MITRAL:</strong>
+                <ul>
+                    <li>"Cuclillas" (ruidos disminuyen)</li>
+                    <li>"Irradiado a axila"</li>
+                </ul>
+            </div>
+
+            <div class="nemotecnia">
+                <strong>INSUFICIENCIA AÓRTICA:</strong>
+                <ul>
+                    <li>"Austin Flint"</li>
+                    <li>Cualquiera de los signos (Hill, Musset, Müller, Quincke, Traube)</li>
+                </ul>
+            </div>
+
+            <h3>📋 Estrategia para Casos Clínicos</h3>
+            <div class="highlight">
+                <ol>
+                    <li>Buscar palabras clave específicas</li>
+                    <li>Identificar irradiación del soplo:
+                        <ul>
+                            <li>Cuello = estenosis</li>
+                            <li>Axila = insuficiencia</li>
+                        </ul>
+                    </li>
+                    <li>Evaluar maniobras especiales</li>
+                    <li>Confirmar con signos patognomónicos</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🔗 CARACTERÍSTICAS COMPARTIDAS</h2>
+            <ul>
+                <li>Etiología reumática (estenosis aórtica e insuficiencia mitral)</li>
+                <li>Tos y disnea (ambas patologías)</li>
+                <li>Valvulopatía severa con IC → afecta retrógradamente todas las válvulas</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>NOTA IMPORTANTE:</strong>
+                <ul>
+                    <li>La mayoría de valvulopatías afecta el corazón <strong>IZQUIERDO</strong></li>
+                    <li>Preguntas de examen se enfocan en: estenosis aórtica, insuficiencia mitral, estenosis mitral, insuficiencia aórtica</li>
+                    <li>Raramente preguntan: patología de válvulas derechas (pulmonar, tricúspide)</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Add smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers for internal links
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    scrollToSection(targetId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
